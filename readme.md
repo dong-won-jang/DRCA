@@ -66,7 +66,7 @@ traindata/DIV2K or traindata/DF2K.
             │   └── 3450x4.png
             └── ...   
   
-Validation images were located at same foler. We use 5 validation images.
+Validation images were located at same folder. We use 5 validation images.
 
 For more informaiton, please refer to [EDSR(PyTorch)](https://github.com/thstkdgus35/EDSR-PyTorch).
 
@@ -74,7 +74,7 @@ For more informaiton, please refer to [EDSR(PyTorch)](https://github.com/thstkdg
 
 Cd to 'code', run the following scripts to train models.
 
-        **You can use scripts in file 'TrainDRCA_scripts' to train models for our paper.**
+    **You can use scripts in file 'TrainDRCA_scripts' to train models for our paper.**
 
     ```bash
     # scale 2, 4 for DIV2K
@@ -130,21 +130,23 @@ Name of HR and LR images should be same except for x2 or x4.
 
 3. Cd to 'code', run the following scripts to test models.
 
-        **You can use scripts in file 'TestDRCA_scripts' to train models for our paper.**
+    **You can use scripts in file 'TestDRCA_scripts' to train models for our paper.**
         
     ```bash
     declare -a dbName=("Set5" "Set14" "B100" "Urban100" "Manga109")
     arrLen=${#dbName[@]}
     scale=4
     trained="DF2K"
+    model="DRCA_BIX$scale""_$trained"
 
+    # Large Model
     for ((i=0;i<$arrLen;i++));
     do
-        cmd="python main.py --self_ensemble --data_test ${dbName[$i]} --scale $scale --model DRCA --n_resgroups 5 --n_resblocks 36 --n_feats 64 --pre_train ../model/DRCA_BIX$scale'_'$trained.pt --test_only --save_results --chop --save 'DRCA_Self_$trained/${dbName[$i]}/X$scale' --testpath ../benchmark"
+        cmd="CUDA_VISIBLE_DEVICES=0 python main.py --self_ensemble --data_test ${dbName[$i]} --scale $scale --model DRCA --n_resgroups 5 --n_resblocks 36 --n_feats 64 --pre_train ../model/$model.pt --test_only --save_results --chop --save 'DRCA_Self_$trained/${dbName[$i]}/X$scale' --testpath ../benchmark"
         eval "$cmd"
     done
     ```
-    
+
 ## Results
 ### Quantitative Results
 ![PSNR_SSIM_BI](/Figs/result.png)
