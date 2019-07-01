@@ -159,9 +159,8 @@ Name of HR and LR images should be same except for x2 or x4.
 ## Acknowledgements
 This code is built on [EDSR (PyTorch)](https://github.com/thstkdgus35/EDSR-PyTorch) and [RCAN](https://github.com/yulunzhang/RCAN). We thank the authors for sharing their codes.
 
-## Citations
+## Citation
 
-    .
     @InProceedings{Jang_2019_CVPR_Workshops,
     author = {Jang, Dong-Won and Park, Rae-Hong},
     title = {DenseNet With Deep Residual Channel-Attention Blocks for Single Image Super Resolution},
