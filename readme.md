@@ -9,6 +9,7 @@ The code is built on [EDSR (PyTorch)](https://github.com/thstkdgus35/EDSR-PyTorc
 3. [Test](#test)
 4. [Results](#results)
 5. [Acknowledgements](#acknowledgements)
+6. [Citation](#citation)
 
 ## Introduction
 ### Abstract 
