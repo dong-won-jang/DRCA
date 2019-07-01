@@ -130,7 +130,7 @@ Name of HR and LR images should be same except for x2 or x4.
 
 3. Cd to 'code', run the following scripts to test models.
 
-    **You can use scripts in file 'TestDRCA_scripts' to train models for our paper.**
+    **You can use scripts in file 'TestDRCA_scripts' to test models for our paper.**
         
     ```bash
     declare -a dbName=("Set5" "Set14" "B100" "Urban100" "Manga109")
@@ -158,3 +158,16 @@ Name of HR and LR images should be same except for x2 or x4.
 
 ## Acknowledgements
 This code is built on [EDSR (PyTorch)](https://github.com/thstkdgus35/EDSR-PyTorch) and [RCAN](https://github.com/yulunzhang/RCAN). We thank the authors for sharing their codes.
+
+## Citations
+
+    .
+    @InProceedings{Jang_2019_CVPR_Workshops,
+    author = {Jang, Dong-Won and Park, Rae-Hong},
+    title = {DenseNet With Deep Residual Channel-Attention Blocks for Single Image Super Resolution},
+    booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month = {June},
+    year = {2019}
+    }
+    
+
